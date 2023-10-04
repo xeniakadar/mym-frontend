@@ -6,12 +6,18 @@ const NasaPage = () => {
   useEffect(() => {
     async function fetchBlogposts() {
       try {
-        const response = await fetch("ADD LINK HERE");
+        const response = await fetch(
+          "https://mym-backend-lgot0fken-xeniakadars-projects.vercel.app/api/nasa-daily-image",
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
         const data = await response.json();
 
         if (response.ok) {
-          setImageData(data);
-          console.log(data);
+          setImageData(data.url);
         } else {
           console.error("failed to fetch blogposts", data);
         }
@@ -25,7 +31,7 @@ const NasaPage = () => {
   return (
     <div>
       <h1>Welcome to the Nasa Daily Image Page</h1>
-      {/* <h1>{imageData}</h1> */}
+      <img src={imageData} alt="space image" />
     </div>
   );
 };
