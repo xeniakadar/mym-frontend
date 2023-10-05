@@ -7,6 +7,7 @@ const Authenticate = () => {
   const [registerUsername, setRegisterUsername] = useState("");
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
+  const [userCreated, setUserCreated] = useState(false);
 
   // login
   const [loginUsername, setLoginUsername] = useState("");
@@ -59,7 +60,10 @@ const Authenticate = () => {
       const data = await response.json();
       if (response.ok) {
         console.log("User created successfully");
-        window.location.reload();
+        setUserCreated(true);
+        setRegisterEmail("");
+        setRegisterPassword("");
+        setRegisterUsername("");
       } else {
         console.error("Error creating user:", data);
         if (response.status === 403 && data.errors) {
@@ -112,49 +116,19 @@ const Authenticate = () => {
     }
   };
 
-  const loginGoogle = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch(
-        "https://mym-backend-lgot0fken-xeniakadars-projects.vercel.app/auth/google/callback",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            username: loginUsername,
-            password: loginPassword,
-          }),
-        }
-      );
-      if (response.ok) {
-        const data = await response.json();
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("username", data.body.username);
-        localStorage.setItem("userId", data.body._id);
-        setError("");
-        navigate("/daily-image");
-        window.location.reload();
-      } else {
-        const errorData = await response.json();
-        console.error("Error logging in user:", errorData);
-        setError(errorData.error);
-      }
-    } catch (error) {
-      console.error("an error occurred: ", error);
-    }
-  };
-
   return (
-    <div className="w-full md:w-full min-w-full mx-auto p-4">
+    <div className=" w-full p-4">
       <a
-        href="http://127.0.0.1:5173/auth/google/callback"
-        className="block text-center mb-6"
+        href="https://mym-backend-lgot0fken-xeniakadars-projects.vercel.app/auth/google"
+        className="block text-white text-center mb-6"
       >
         Log in with Google
       </a>
-
+      {userCreated && (
+        <div className="mb-4 text-green-500">
+          User created successfully. Log in to see NASA's daily image.
+        </div>
+      )}
       <Tab.Group>
         <Tab.List className="flex space-x-1 rounded-xl bg-sky-900 p-1 mb-4">
           <Tab as={Fragment}>

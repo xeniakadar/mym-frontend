@@ -21,7 +21,7 @@ const Homepage = () => {
                 Sign up and log in to view NASA&apos;s daily image
               </p>
             </div>
-            <div className="login flex-1 flex justify-center items-center">
+            <div className="login flex-1 flex justify-center items-center md:max-w-1/2 w-full">
               <Authenticate />
             </div>
           </div>
