@@ -126,7 +126,7 @@ const Authenticate = () => {
       </a>
       {userCreated && (
         <div className="mb-4 text-green-500">
-          User created successfully. Log in to see NASA's daily image.
+          User created successfully. Log in to see NASA&#39;s daily image.
         </div>
       )}
       <Tab.Group>
