@@ -14,14 +14,14 @@
 
 # Installation
 
-Clone the repository:
-`git clone https://github.com/xeniakadar/mym-frontend.git`
-Navigate to the directory:
-`cd mym-frontend`
-Install dependencies:
-`npm install`
-Start the development server:
-`npm run dev`
+- Clone the repository:
+  `git clone https://github.com/xeniakadar/mym-frontend.git`
+- Navigate to the directory:
+  `cd mym-frontend`
+- Install dependencies:
+  `npm install`
+- Start the development server:
+  `npm run dev`
 
 ## Performance
 
