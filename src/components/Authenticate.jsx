@@ -118,12 +118,6 @@ const Authenticate = () => {
 
   return (
     <div className=" w-full p-4">
-      <a
-        href="https://mym-backend-lgot0fken-xeniakadars-projects.vercel.app/auth/google"
-        className="block text-white text-center mb-6"
-      >
-        Log in with Google
-      </a>
       {userCreated && (
         <div className="mb-4 text-green-500">
           User created successfully. Log in to see NASA&#39;s daily image.
@@ -228,6 +222,14 @@ const Authenticate = () => {
                 type="submit"
                 value="Log In"
               />
+              <a
+                href="https://mym-backend-lgot0fken-xeniakadars-projects.vercel.app/auth/google"
+                className="block text-white text-center mb-6"
+              >
+                <h1 className=" w-full md:text-lg  bg-red-500 text-white rounded-xl p-3 hover:opacity-80  ease-in-out duration-300">
+                  Login with Google
+                </h1>
+              </a>
             </form>
           </Tab.Panel>
           <Tab.Panel>
