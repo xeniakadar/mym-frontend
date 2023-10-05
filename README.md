@@ -1,4 +1,4 @@
-### Frontend for MYM Project
+# Frontend for MYM Project
 
 ## Technologies Used
 
@@ -9,12 +9,12 @@
 
 ## Setup
 
-# Prerequisites
+### Prerequisites
 
 - Node.js
 - npm
 
-# Installation
+### Installation
 
 - Clone the repository: \
   `git clone https://github.com/xeniakadar/mym-frontend.git`
