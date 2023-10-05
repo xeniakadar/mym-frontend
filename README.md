@@ -1,9 +1,9 @@
 ## Technologies Used
 
-**Vite:** A build tool that offers faster and leaner development for modern web projects.
-**React:** A JavaScript library for building user interfaces.
-**Tailwind CSS:** A utility-first CSS framework for rapidly building custom user interfaces.
-**Headless UI:** Simplified the process of creating beautiful looking components, like the login page.
+**Vite:** A build tool that offers faster and leaner development for modern web projects. \
+**React:** A JavaScript library for building user interfaces. \
+**Tailwind CSS:** A utility-first CSS framework for rapidly building custom user interfaces. \
+**Headless UI:** Simplified the process of creating beautiful looking components, like the login page. \
 
 ## Setup
 
